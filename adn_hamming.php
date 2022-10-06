@@ -18,12 +18,19 @@
     <?php
     } else {
         for ($i = 0; $i < strlen($primer_adn);$i++) {
+            #función no eficiente porque en cada paso del for, se calcula el strlen().
+            /**
+             * es mejor calcular en una varible la longitud de las cadenas
+             * de forma que si se usa en el primer for, ya estará calculada y
+             * esa variable ya tendrá el valor que buscamos
+             */
+            
             if ($primer_adn[$i] != $segundo_adn[$i])
             $hammin += 1;
         }
     }
     ?>
 
-    <p> La diferencia Hamming entre estas dos cadenas de ADN es <?= $hammin ?> </p>
+    <p> La diferencia Hamming entre <?= $primer_adn ?> y <?= $segundo_adn ?> es: <?= $hammin ?> </p>
 </body>
 </html>
