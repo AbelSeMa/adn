@@ -12,12 +12,12 @@
     $segundo_adn = trim($_GET['segunda']);
     $hammin = 0;
 
-    if (strlen($primer_adn) != strlen($segundo_adn)) { ?>
+    if (($longitud = strlen($primer_adn)) != strlen($segundo_adn)) { ?>
         <p>Las cadenas no son de las mismas longitudes</p>
 
     <?php
     } else {
-        for ($i = 0; $i < strlen($primer_adn);$i++) {
+        for ($i = 0; $i < $longitud; $i++) {
             #función no eficiente porque en cada paso del for, se calcula el strlen().
             /**
              * es mejor calcular en una varible la longitud de las cadenas
